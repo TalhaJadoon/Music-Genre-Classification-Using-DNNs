@@ -38,7 +38,7 @@ The genres I am classifying are:
 10.rock<br>
 
 <p align="center">
-<img src="assets/music_popularity.png?raw=true" alt="Music genre popularity" width="500">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/music_popularity.png?raw=true" alt="Music genre popularity" width="500">
 </p>
 
 ## Preprocessing the data
@@ -61,18 +61,18 @@ I had tried several window size and stride values, the best result I got was for
 One more point was that Tao’s paper used MFCC features (step 5) while Sander used strait mel-frequencies (step 2).
 
 <p align="center">
-<img src="assets/mel_power_over_time.png?raw=true" alt="MEL ppower over time" width="650">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/mel_power_over_time.png?raw=true" alt="MEL ppower over time" width="650">
 </p>
 
 I tried both approaches and found out that I got extremely better results using just the mel-frequencies, but the trade-off was the training time of-course.
 Before continue to building a network I wanted to visualise the preprocessed data set, I implemented this through the t-SNE[10] algorithm.Below you can see the t-SNE graph for MFCC (step 5) and Mel-Frequencies (step 2):
  
 <p align="center">
-<img src="assets/tsne_mfcc.png?raw=true" alt="t-SNE MFCC samples as genres" width="500">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/tsne_mfcc.png?raw=true" alt="t-SNE MFCC samples as genres" width="500">
 </p>
 
 <p align="center">
-<img src="assets/tsne_mel_spec.png?raw=true" alt="t-SNE mel-spectogram samples as genres" width="500">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/tsne_mel_spec.png?raw=true" alt="t-SNE mel-spectogram samples as genres" width="500">
 </p>
  
 ## The Graph
@@ -80,7 +80,7 @@ Before continue to building a network I wanted to visualise the preprocessed dat
  After seeing the results Tao and Sander reached I decided to go with a convolu- tional neural network implementation. The network receive a 599 vector of mea-frequen- cy beans, each containing 128 frequencies which describe their window. The network consist with 3 hidden layers and between them I am doing a max pooling. Finally a fully connected layer and than softmax to end up with a 10 dimensional vector for our ten genre classes
  
 <p align="center">
-<img src="assets/nural_network.png?raw=true" alt="Nural Network" width="500">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/nural_network.png?raw=true" alt="Nural Network" width="500">
 </p>
  
  I did implement another network for MFCC feature instead of mel-frequencies, the only differences are in the sizes (13 frequencies per window instead of 128).
@@ -88,7 +88,7 @@ Before continue to building a network I wanted to visualise the preprocessed dat
  Visualisation of various filters (from Sander’s paper):
 
 <p align="center">
-<img src="assets/filters.png?raw=true" alt="Filters visualization" width="250">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/filters.png?raw=true" alt="Filters visualization" width="250">
 </p>
 
 • Filter 14 seems to pick up vibrato singing.
@@ -107,12 +107,12 @@ As I explained in the introduction, the papers I based my work on did not solve 
 I did looked for benchmarks outside the deep learning field and I found a paper titled “A BENCHMARK DATASET FOR AUDIO CLASSIFICATION AND CLUSTERING” [11]. This paper benchmark a very similar task to mine, the genres it classifies: Blues, Electronic, Jazz, Pop, HipHop, Rock, Folk, Alternative, Funk.
 
 <p align="center">
-<img src="assets/results_benchmark.png?raw=true" alt="Benchmark results" width="750">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/results_benchmark.png?raw=true" alt="Benchmark results" width="750">
 </p>
 
 ### My results:
 <p align="center">
-<img src="assets/results_mine.png?raw=true" alt="My results" width="750">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/results_mine.png?raw=true" alt="My results" width="750">
 </p>
 
 ## Code
