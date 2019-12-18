@@ -1,6 +1,6 @@
 # Music-Genre-Classification-Using-DNNs
 <p align="center">
-<img src="assets/musicGenereClassification.png?raw=true" alt="MusicGenreClassification" width="250">
+<img src="Music-Genre-Classification-Using-DNNs-master/assets/musicGenereClassification.png?raw=true" alt="MusicGenreClassification" width="250">
 </p>
 
 
